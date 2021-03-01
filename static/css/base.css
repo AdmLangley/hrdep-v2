@@ -1,0 +1,9 @@
+body {
+    text-align: center;
+    font: 14pt 'Times New Roman';
+    padding: 5px 5%;
+    background-image: url(../img/background47.jpg);
+    background-position: left, right;
+    background-repeat: repeat;
+    color: rgba(13, 0, 124, 0.74);
+}

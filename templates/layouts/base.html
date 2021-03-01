@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>MySite - {{ context.page_title }}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+        <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+    </head>
+    <header>
+        <h1>Соболь Даниил</h1>
+        <hr>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+        <hr>
+    </main>
+    <footer>
+        <h4>Copyright: &copy; Sobol - Kiev, 2020-2021</h4>
+        <hr>
+    </footer>
+</html>

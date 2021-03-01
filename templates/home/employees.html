@@ -1,0 +1,62 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+<div class="main_box">
+    <h2>Департамент: {{ context.dep_name }} отдел</h2>
+    <h3>Список сотрудников:</h3>
+    <div class="emps_view">
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Position</th>
+                <th>Salary</th>
+                <th>Control</th>
+            </tr>
+            {% for emp in context.employees %}
+                <tr>
+                    <td>{{ emp['id'] }}</td>
+                    <td>{{ emp['name'] }}</td>
+                    <td>{{ emp['age'] }}</td>
+                    <td>{{ emp['position'] }}</td>
+                    <td>{{ emp['salary'] }}</td>
+                    <td>
+                        |
+                        <a href="">Details</a>
+                        |
+                        <a href="">Edit</a>
+                        |
+                        <a href="">Delete</a>
+                        |
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <br>
+    <p>
+        <a href="{{ url_for('add_employee', dep_id=context.dep_id) }}">Добавить сотрудника</a>
+        <a href="{{ url_for('index') }}">Назад к списку депертаментам</a>
+    </p>
+
+</div>
+<style>
+    .emps_view {
+        text-align: center;
+    }
+    a {
+        text-decoration: none;
+    }
+    a:hover {
+        color: red;
+    }
+    table {
+        width: 100%;
+    }
+    th, td {
+        padding: 5px;
+
+    }
+</style>
+{% endblock %}
